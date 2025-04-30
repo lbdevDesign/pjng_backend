@@ -1,0 +1,36 @@
+{
+  "kind": "collectionType",
+  "collectionName": "concerts",
+  "info": {
+    "singularName": "concert",
+    "pluralName": "concerts",
+    "displayName": "Concert",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "Nom": {
+      "type": "string"
+    },
+    "Lieu": {
+      "type": "string"
+    },
+    "Date": {
+      "type": "date"
+    },
+    "Accreditation": {
+      "type": "boolean"
+    },
+    "Description": {
+      "type": "text"
+    },
+    "Photos": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::photo.photo",
+      "mappedBy": "Concerts"
+    }
+  }
+}

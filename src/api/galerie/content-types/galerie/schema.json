@@ -1,0 +1,36 @@
+{
+  "kind": "collectionType",
+  "collectionName": "galeries",
+  "info": {
+    "singularName": "galerie",
+    "pluralName": "galeries",
+    "displayName": "Galerie",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "Nom": {
+      "type": "string"
+    },
+    "Description": {
+      "type": "text"
+    },
+    "Type": {
+      "type": "enumeration",
+      "enum": [
+        "Voyage",
+        "Urbain",
+        "Nature",
+        "Portrait"
+      ]
+    },
+    "Photos": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::photo.photo",
+      "mappedBy": "Galeries"
+    }
+  }
+}

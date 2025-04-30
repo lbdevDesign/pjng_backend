@@ -1,0 +1,63 @@
+{
+  "kind": "collectionType",
+  "collectionName": "photos",
+  "info": {
+    "singularName": "photo",
+    "pluralName": "photos",
+    "displayName": "Photo",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "Titre": {
+      "type": "string"
+    },
+    "Description": {
+      "type": "string"
+    },
+    "Image": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "Date": {
+      "type": "date"
+    },
+    "Lieu": {
+      "type": "string"
+    },
+    "Tags": {
+      "type": "enumeration",
+      "enum": [
+        "Normal",
+        "Concert"
+      ]
+    },
+    "Avendre": {
+      "type": "boolean"
+    },
+    "Prix": {
+      "type": "decimal"
+    },
+    "Galeries": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::galerie.galerie",
+      "inversedBy": "Photos"
+    },
+    "Concerts": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::concert.concert",
+      "inversedBy": "Photos"
+    }
+  }
+}
